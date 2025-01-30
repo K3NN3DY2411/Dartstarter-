@@ -1,0 +1,16 @@
+const http = require('http');
+const socketio = require('socket.io');
+const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
+
+io.on('connection', (socket) => {
+  socket.on('joinGame', (gameId) => {
+    socket.join(gameId);
+    socket.emit('gameUpdate', `Joined game ${gameId}`);
+  });
+
+  socket.on('throwDart', (gameId, score) => {
+    io.to(gameId).emit('gameUpdate', `Player scored ${score}`);
+  });
+});
