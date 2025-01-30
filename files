@@ -1,0 +1,18 @@
+dart-starter/
+├── client/                 # Frontend (React.js)
+│   ├── public/
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/          # Page components (Home, PvP, Community, etc.)
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+│
+├── server/                 # Backend (Node.js/Express)
+│   ├── models/             # MongoDB models (User, Post, Game, etc.)
+│   ├── routes/             # API routes
+│   ├── app.js
+│   └── package.json
+│
+├── database/               # MongoDB schemas
+└── README.md               # Setup instructions
