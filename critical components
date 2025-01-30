@@ -1,0 +1,28 @@
+// client/src/components/DartCounter.js
+import React, { useState } from 'react';
+
+const DartCounter = () => {
+  const [score, setScore] = useState(501);
+  const [input, setInput] = useState('');
+
+  const handleThrow = () => {
+    const points = parseInt(input);
+    if (!isNaN(points)) {
+      setScore(score - points);
+      setInput('');
+    }
+  };
+
+  return (
+    <div>
+      <h2>Score: {score}</h2>
+      <input
+        type="number"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button onClick={handleThrow}>Throw</button>
+    </div>
+  );
+};
+export default DartCounter;
