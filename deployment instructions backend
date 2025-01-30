@@ -1,0 +1,5 @@
+cd server
+   npm install
+   # Set environment variables (MongoDB URI, JWT secret).
+   npm start
+   # Deploy to Heroku/AWS.
